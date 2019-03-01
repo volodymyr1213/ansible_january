@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  become: yes
+  become_method: sudo 
+  tasks:
+    - name: Install multiple packages
+      package:
+        name : "{{ item }}"
+        state: present
+      with_items:
+        - lftp
+        - telnet
+        - ftp
+        - vsftpd
+        - httpd

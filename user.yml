@@ -1,0 +1,15 @@
+---
+- name: Adds user
+  hosts: localhost
+  become: yes
+  become_method: sudo 
+  connection: ssh
+  gather_facts: no
+  tasks:
+    - name: Add bob
+      user: 
+        name : bob
+        state: present
+        comment: Developer
+
+      
